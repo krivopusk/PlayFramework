@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{ifErrors}
+   <h1 style="color:#FF0000" >Oops…</h1>
+ 
+   #{errors}
+       <li style="color:#FF0000" >${error}</li>
+	   <p></p>
+   #{/errors}
+#{/ifErrors}
+
+<form action="@{Application.getMeridiansConvergence()}" method="GET">
+  <span>Latitude: </span><input type="text" name="Latitude" />
+  <span>Longitude: </span><input type="text" name="Longitude" />
+  <input type="submit" value="Get Convergence!" />
+</form>
